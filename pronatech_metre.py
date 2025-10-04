@@ -58,8 +58,13 @@ engine = create_engine(
 
 # excel_file = "data/pronatech_data.xlsx" 
 # excel_file = "data/Pronatech/Export_vorder_interne_9_2025-4.xlsx" 
-excel_file="data/Pronatech/Export_vorder_interne_10_2025-3_1655.xlsx"
-df = pd.read_excel(excel_file)
+folder ="/srv/sftpuser/files"
+
+filename = "pronatech.xlsx"
+
+full_path = os.path.join(folder, filename)
+
+df = pd.read_excel(full_path)
 
 # Rename columns to match DB
 df = df.rename(columns={
